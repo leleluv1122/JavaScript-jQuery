@@ -1,0 +1,21 @@
+<script>
+    var name = prompt("당신의 이름은?", "");
+    var height = prompt("키는 몇인가요?", "0"); 
+    var weight = prompt("몸무게는 몇인가요?", "0");
+
+    var me = (height-100)*0.9;
+
+
+    document.write("신장: " + height + "(cm)", "<br>");
+    document.write("체중: " + weight + "(kg)", "<br>");
+    document.write("적정체중은: " + me, "<br>");
+
+    var dd = weight-me;
+
+    var result = weight >= me-5 && weight <= me+5;
+    result = result ? "적정 체중입니다." : "적정 체중이 아닙니다";
+    document.write(name + "님은" + result);
+    // if(weight>me){
+    //     document.write("현재 적정 체중에서" + dd +"kg 초과 살빼삼ㅡㅡ", "<br>");
+    // }
+</script>
