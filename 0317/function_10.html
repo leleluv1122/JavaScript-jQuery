@@ -1,0 +1,43 @@
+<script>
+    function CheckWeight(name, height, weight) {
+        this.userName = name;
+        this.userHeight = height;
+        this.userWeight = weight;
+        this.minWeight;
+        this.maxWeight;
+
+
+        this.getInfo = function () {
+            var str = "";
+            str += "이름: " + this.userName + ",";
+            str += "키: " + this.userHeight + ",";
+            str += "몸무게: " + this.userWeight + "<br>";
+            return str;
+        }
+
+        this.getResult = function () {
+            this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+            this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+            if (this.userWeight >= this.minWeight
+                && this.userWeight <= this.maxWeight) {
+                return "정상 몸무게 입니다.";
+            } else if (this.userWeight < this.minWeight) {
+                return "정상 몸무게보다 미달입니다.";
+            } else {
+                return "정상 몸무게보다 초과입니다.";
+            }
+        }
+    }
+
+    var park = new CheckWeight("박승희", 167, 52);
+    var lele = new CheckWeight("천러", 177, 58);
+    console.log(park);
+    console.log(lele);
+
+    document.write(park.getInfo());
+    document.write(park.getResult());
+    document.write("<br>");
+    document.write(lele.getInfo());
+    document.write(lele.getResult());
+</script>
