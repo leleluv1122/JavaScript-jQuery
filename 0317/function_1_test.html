@@ -1,0 +1,20 @@
+<script>
+    var count = 0;
+
+    myFunc(); //hello1
+
+    function myFunc(){
+        count++;
+        document.write("hello " + count, "<br>");
+    }
+
+    myFunc(); //hello2
+
+    var theFnc = function(){
+        count++;
+        document.write("bye " + count, "<br>");
+    }
+
+    theFnc(); //bye3
+</script>
+<!-- 함수 호출문이 먼저 나와도 호이스팅 방식이 적용되어 정삭적으로 함수를 호출함 -->
