@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        // $("#txt").css("color", "red"); //잘못된방법
+
+        // $(document).ready(function(){
+        //     $("#txt").css("color", "red");
+        // }); //정상
+
+        $(function(){
+            $("#txt").css("color", "red");
+        }); //정상
+    </script>
+</head>
+<body>
+    <p id="txt">내용</p>
+</body>
+</html>
