@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function () {
+			$(".btn1").click(function () { //btn클래스 선택 click event만 등록하는 함수!
+				$(".btn1").parent().next() //부모element 다음 객체를 Red로 변경
+					.css({ "color": "#f00" });
+			});
+
+			$(".btn2").on({ //on은 이벤트와 핸들러를 짝지어주는 함수
+				"mouseover focus": function () { //마우스가 올라가면 이벤트 실행
+					$(".btn2").parent().next()
+						.css({ "color": "#0f0" });
+				},
+				"mouseout blur": function () { //마우스가 벗어나면 이벤트...
+					$(".btn2").parent().next()
+						.css({ "color": "#000" });
+				}
+			});    // 이 이벤트가 발생하면 실행됨 두개 등록해도되고 한개해도됨
+			// on이 여러개의 함수를 가지고 있다구 생각하기ㅣ.....
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+</body>
+
+</html>
