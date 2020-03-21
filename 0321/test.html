@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Animate Div Width on Hover</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 180px;
+            background: #f0e68c;
+            border: 1px solid #a29415;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var boxWidth = $(".box").width();
+            var boxHeight = $(".box").height();
+            $(".box").mouseenter(function () {
+                $(this).animate({
+                    width: "270",
+                    height: "190"
+                });
+            }).mouseleave(function () {
+                $(this).animate({
+                    width: boxWidth,
+                    height: boxHeight
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="aa">
+            <p><strong>Note:</strong> Place mouse pointer over the box to play the animation.</p>
+            <div class="box well"></div>
+        </div>
+    </div>
+</body>
+
+</html>
